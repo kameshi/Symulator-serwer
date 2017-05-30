@@ -24,14 +24,14 @@ TRAILING NULLCOLS
 LOAD DATA
 infile samochod.csv
 REPLACE
-INTO TABLE Produkt
+INTO TABLE Samochod
 FIELDS TERMINATED BY ';'
 TRAILING NULLCOLS
 (
-  Id_produkt,
+  Id_samochod,
   Id_model,
+  Pojemnosc,
   Moc,
-  Paliwo,
   Rok_produkcji,
-  Pojemnosc
+  Paliwo
 )

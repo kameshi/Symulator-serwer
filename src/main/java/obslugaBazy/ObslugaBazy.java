@@ -34,7 +34,7 @@ public class ObslugaBazy {
 		System.out.println("Marka:");
 		while (result.next()) {
 			markaList.add(new Marka(result.getInt(1), result.getString(2)));
-			System.out.println(markaList.get(i).toString());
+			//System.out.println(markaList.get(i).toString());
 			i++;
 		}
 		result = stmt.executeQuery("SELECT * FROM MODEL");
@@ -42,7 +42,7 @@ public class ObslugaBazy {
 		System.out.println("\nModel:");
 		while (result.next()) {
 			modelList.add(new Model(result.getInt(1), result.getInt(2), result.getString(3)));
-			System.out.println(modelList.get(i).toString());
+			//System.out.println(modelList.get(i).toString());
 			i++;
 		}
 		result = stmt.executeQuery("SELECT * FROM SAMOCHOD");
