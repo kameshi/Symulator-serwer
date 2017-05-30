@@ -4,7 +4,7 @@ public class Samochod {
 	private int idSamochod, idModel;
 	private String moc, rokProdukcji, rodzajPaliwa, pojemnosc;
 	
-	public Samochod(int idSamochod, int idModel, String moc, String rokProdukcji, String rodzajPaliwa, String pojemnosc){
+	public Samochod(int idSamochod, int idModel, String pojemnosc, String moc, String rokProdukcji, String rodzajPaliwa){
 		this.idSamochod = idSamochod;
 		this.idModel = idModel;
 		this.moc = moc;
@@ -18,10 +18,10 @@ public class Samochod {
 		return "Samochod{" +
 				"idSamochod=" + idSamochod +
 				", idModel=" + idModel +
+				", pojemnosc='" + pojemnosc + '\'' +
 				", moc='" + moc + '\'' +
 				", rokProdukcji='" + rokProdukcji + '\'' +
 				", rodzajPaliwa='" + rodzajPaliwa + '\'' +
-				", pojemnosc='" + pojemnosc + '\'' +
 				'}';
 	}
 

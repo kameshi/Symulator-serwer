@@ -21,10 +21,10 @@ CREATE TABLE Model(
 CREATE TABLE Samochod(
   Id_Samochod NUMBER(8),
   Id_model NUMBER(5),
+  Pojemnosc Varchar2(5),
+  Rok_produkcji Varchar2(4),
   Moc Varchar2(4),
   Paliwo VARCHAR2(7),
-  Rok_produkcji Varchar2(4),
-  Pojemnosc Varchar2(5),
   CONSTRAINT samochod_model_fk FOREIGN KEY (Id_model) REFERENCES Model(Id_model),
   CONSTRAINT paliwo_check CHECK (Paliwo IN ('benzyna', 'gaz', 'hybryda', 'diesel')),
   CONSTRAINT samochod_pk PRIMARY KEY (Id_produkt)

@@ -1,0 +1,37 @@
+LOAD DATA
+infile marka.csv
+REPLACE
+INTO TABLE Marka
+FIELDS TERMINATED BY ';'
+TRAILING NULLCOLS
+(
+  Id_marka,
+  Nazwa
+)
+
+LOAD DATA
+infile model.csv
+REPLACE
+INTO TABLE Model
+FIELDS TERMINATED BY ';'
+TRAILING NULLCOLS
+(
+  Id_model,
+  Id_marka,
+  Nazwa
+)
+
+LOAD DATA
+infile samochod.csv
+REPLACE
+INTO TABLE Produkt
+FIELDS TERMINATED BY ';'
+TRAILING NULLCOLS
+(
+  Id_produkt,
+  Id_model,
+  Moc,
+  Paliwo,
+  Rok_produkcji,
+  Pojemnosc
+)
