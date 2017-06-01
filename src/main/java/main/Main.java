@@ -1,9 +1,12 @@
 package main;
 
+import komunikacja.ObslugaKlienta;
 import obslugaBazy.ObslugaBazy;
 
 import java.io.FileNotFoundException;
+import java.io.PrintWriter;
 import java.net.ServerSocket;
+import java.net.Socket;
 import java.sql.*;
 
 public class Main {//liczby z przecinkiem "," podajemy z kropk� "." istotne !!!!!!!!!!!!!!!!!
@@ -12,12 +15,9 @@ public class Main {//liczby z przecinkiem "," podajemy z kropk� "." istotne !!
     private int Port = 6000;
 
     public static void main(String[] args) throws FileNotFoundException, ClassNotFoundException, SQLException {
-        ObslugaBazy obslugaBazy = new ObslugaBazy();
-        obslugaBazy.odczyt();
-        //Main server = new Main();
-        //server.dzialanie();
+        Main server = new Main();
+        server.dzialanie();
     }
-/*
     public Main() {
     }
 
@@ -41,5 +41,4 @@ public class Main {//liczby z przecinkiem "," podajemy z kropk� "." istotne !!
             ex.printStackTrace();
         }
     }
-*/
 }
