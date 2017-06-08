@@ -1,15 +1,14 @@
 package main;
 
-import komunikacja.ObslugaKlienta;
-import obslugaBazy.ObslugaBazy;
+
+
+import komunikacja.Komunikacja;
 
 import java.io.FileNotFoundException;
-import java.io.PrintWriter;
-import java.net.ServerSocket;
-import java.net.Socket;
+import java.net.*;
 import java.sql.*;
 
-public class Main {//liczby z przecinkiem "," podajemy z kropk� "." istotne !!!!!!!!!!!!!!!!!
+public class Main {
 
     private ServerSocket gniazdoServer;
     private int Port = 6000;
@@ -31,9 +30,7 @@ public class Main {//liczby z przecinkiem "," podajemy z kropk� "." istotne !!
             System.out.println("Server w��czony.");
             while (true) {
                 Socket gniazdoKlient = gniazdoServer.accept();
-                PrintWriter pisarz = new PrintWriter(gniazdoKlient.getOutputStream());
-
-                Thread t = new Thread(new ObslugaKlienta(gniazdoKlient, pisarz));
+                Thread t = new Thread(new Komunikacja(gniazdoKlient));
                 t.start();
                 System.out.println("Po��czenie uzyskane z klientem.");
             }
