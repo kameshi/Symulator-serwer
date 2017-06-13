@@ -2,6 +2,8 @@ package main;
 
 
 
+import bazaDanych.Historia;
+import bazaDanych.ObslugaBazyDanych;
 import komunikacja.Komunikacja;
 
 import java.io.FileNotFoundException;
@@ -14,8 +16,12 @@ public class Main {
     private int Port = 6000;
 
     public static void main(String[] args) throws FileNotFoundException, ClassNotFoundException, SQLException {
-        Main server = new Main();
-        server.dzialanie();
+        ObslugaBazyDanych baza = new ObslugaBazyDanych();
+        //baza.odczytSamochodu();
+        //baza.odczytHistori();
+        baza.zapisHistoria(new Historia());
+        //Main server = new Main();
+        //server.dzialanie();
     }
     public Main() {
     }

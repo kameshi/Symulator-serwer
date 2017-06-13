@@ -1,11 +1,11 @@
 package obliczanie;
 
-import bazaDanych.DaneAut;
+import bazaDanych.DaneAuta;
 
 public class Obliczania {
-    DaneAut auto;
+    DaneAuta auto;
     Double wynik;
-    public Obliczania(DaneAut auto){
+    public Obliczania(DaneAuta auto){
         this.auto = auto;
     }
 

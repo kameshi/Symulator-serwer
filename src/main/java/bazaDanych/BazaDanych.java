@@ -3,24 +3,21 @@ package bazaDanych;
 import java.util.ArrayList;
 
 public class BazaDanych {
-    ArrayList<DaneAut> auto = new ArrayList<DaneAut>();
+    private ArrayList<DaneAuta> auto = new ArrayList<DaneAuta>();
     public BazaDanych(){}
-    public BazaDanych(String numerRej, String marka, String model, Double przejechaneKM, Double spalanie, Integer moc, Integer rok, Integer pojemnosc){
-        auto.add(new DaneAut(numerRej, marka, model, przejechaneKM, spalanie, moc, rok, pojemnosc));
+    public BazaDanych(String marka, String model, String pojemnosc, String moc, String rok, String paliwo, String rejestracja){
+        auto.add(new DaneAuta( marka, model, pojemnosc, moc, rok, paliwo, rejestracja));
     }
     public int size(){
         return auto.size();
     }
-    public DaneAut getObject(int i){
+    public DaneAuta getObject(int i){
         return auto.get(i);
     }
-    public void add(DaneAut dane){
+    public void add(DaneAuta dane){
         auto.add(dane);
     }
-    public void setPrzejechaneKM(Double przejechaneKM ,int i){
-        auto.get(i).setPrzejechaneKM(przejechaneKM);
-    }
-    public String getNumerRej(int i) {
-        return auto.get(i).getNumerRej();
+    public String getRejestracja(int i) {
+        return auto.get(i).getRejestracja();
     }
 }

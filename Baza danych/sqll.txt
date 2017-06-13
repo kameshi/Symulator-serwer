@@ -1,37 +1,44 @@
 LOAD DATA
-infile marka.csv
-REPLACE
-INTO TABLE Marka
-FIELDS TERMINATED BY ';'
-TRAILING NULLCOLS
-(
-  Id_marka,
-  Nazwa
-)
-
-LOAD DATA
-infile model.csv
-REPLACE
-INTO TABLE Model
-FIELDS TERMINATED BY ';'
-TRAILING NULLCOLS
-(
-  Id_model,
-  Id_marka,
-  Nazwa
-)
-
-LOAD DATA
 infile samochod.csv
 REPLACE
 INTO TABLE Samochod
 FIELDS TERMINATED BY ';'
 TRAILING NULLCOLS
 (
-  Id_samochod,
-  Id_model,
+  IdSamochod,
+  Marka,
+  Model,
   Pojemnosc,
   Moc,
-  Rok_produkcji,
+  RokProdukcji,
   Paliwo
+)
+
+LOAD DATA
+infile rejestracja.csv
+REPLACE
+INTO TABLE Rejestracja
+FIELDS TERMINATED BY ';'
+TRAILING NULLCOLS
+(
+	IdRejestracja,
+    IdSamochod,
+    NumerRejestracji
+)
+
+LOAD DATA
+infile historia.csv
+REPLACE
+INTO TABLE Historia
+FIELDS TERMINATED BY ';'
+TRAILING NULLCOLS
+(
+	IdHistoria,
+    IdRejestracja ,
+    Przebieg ,
+    Spalanie ,
+	Przeglad,
+	WymianaOleju,
+	WymianaRozrzadu,
+    Data 
 )

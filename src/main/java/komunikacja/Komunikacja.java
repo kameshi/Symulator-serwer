@@ -5,7 +5,7 @@ import java.net.Socket;
 import java.sql.SQLException;
 
 import bazaDanych.BazaDanych;
-import bazaDanych.DaneAut;
+import bazaDanych.DaneAuta;
 import bazaDanych.ObslugaBazyDanych;
 
 public class Komunikacja implements Runnable{
@@ -15,7 +15,7 @@ public class Komunikacja implements Runnable{
     BazaDanych baza = new BazaDanych();
     ObslugaBazyDanych obslugaBazy = new ObslugaBazyDanych();
 
-    public Komunikacja(Socket gniazdoKlienta){
+    public Komunikacja(Socket gniazdoKlienta) throws SQLException, ClassNotFoundException {
         try{
             gniazdo = gniazdoKlienta;
             czytelnik = new ObjectInputStream(gniazdo.getInputStream());
@@ -43,7 +43,7 @@ public class Komunikacja implements Runnable{
         ListaPomocnicza list = new ListaPomocnicza();
         //baza = obslugaBaza.odczyt();
         for(int i = 0; i<baza.size(); i++) {
-            list.set(baza.getNumerRej(i));
+            list.set(baza.getRejestracja(i));
         }
         //rozeslanie(list);
         String komunikat;
@@ -51,9 +51,9 @@ public class Komunikacja implements Runnable{
         int j = 0;
         komunikat =(String) czytelnik.readObject();
         kiloMetry =(Double) czytelnik.readObject();
-        DaneAut auto = new DaneAut();
+        DaneAuta auto = new DaneAuta();
         for(int i = 0; i<baza.size(); i++) {
-            if (baza.getNumerRej(i) == komunikat) {
+            if (baza.getRejestracja(i) == komunikat) {
                 auto = baza.getObject(i);
                 j = i;
             }
@@ -64,8 +64,8 @@ public class Komunikacja implements Runnable{
         //obslugaBaza.zapis(baza);
     }
     private void noweAuto() throws IOException, SQLException, ClassNotFoundException {
-        DaneAut auto; //= new DaneAut();
-        auto =(DaneAut) czytelnik.readObject();
+        DaneAuta auto; //= new DaneAuta();
+        auto =(DaneAuta) czytelnik.readObject();
         Boolean kontrol = true;
         //baza = obslugaBaza.odczyt();;
         for(int i = 0; i<baza.size(); i++) {
