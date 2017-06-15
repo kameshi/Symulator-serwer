@@ -15,13 +15,9 @@ public class Main {
     private ServerSocket gniazdoServer;
     private int Port = 6000;
 
-    public static void main(String[] args) throws FileNotFoundException, ClassNotFoundException, SQLException {
-        ObslugaBazyDanych baza = new ObslugaBazyDanych();
-        //baza.odczytSamochodu();
-        //baza.odczytHistori();
-        baza.zapisHistoria(new Historia());
-        //Main server = new Main();
-        //server.dzialanie();
+    public static void main(String[] args) throws FileNotFoundException, ClassNotFoundException {
+        Main server = new Main();
+        server.dzialanie();
     }
     public Main() {
     }

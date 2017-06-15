@@ -56,13 +56,10 @@ public class ObslugaBazyDanych {
         String samochod = "INSERT INTO Samochod VALUES('" + dane.getIdSamochod() + "','" + dane.getMarka() + "','" + dane.getModel() + "','" + dane.getPojemnosc() + "','" + dane.getMoc() + "','" + dane.getRok() + "','" + dane.getPaliwo() + "')";
         System.out.println(samochod);
         stmtSamochod.executeUpdate(samochod);
-        String rejestracja = "INSERT INTO Samochod VALUES('" + dane.getIdRejestracja() + "','" + dane.getIdSamochod() + "','" + dane.getRejestracja() + "')";
-        System.out.println(rejestracja);
-        stmtRejestracja.executeUpdate(rejestracja);
     }
 
     public void zapisRejestracji(DaneAuta dane) throws SQLException {
-        String rejestracja = "INSERT INTO Samochod VALUES('" + dane.getIdRejestracja() + "','" + dane.getIdSamochod() + "','" + dane.getRejestracja() + "')";
+        String rejestracja = "INSERT INTO Rejestracja VALUES('" + dane.getIdRejestracja() + "','" + dane.getIdSamochod() + "','" + dane.getRejestracja() + "')";
         System.out.println(rejestracja);
         stmtRejestracja.executeUpdate(rejestracja);
     }
@@ -72,4 +69,16 @@ public class ObslugaBazyDanych {
         System.out.println(historia);
         stmtHistoria.executeUpdate(historia);
     }
+
+    public void usunRejestracje(String idRejestracji) throws SQLException {
+        String rejestracja = "DELETE FROM Rejestracja WHERE IdRejestracja = " + idRejestracji;
+        stmtRejestracja.executeUpdate(rejestracja);
+    }
+
+    public void usunHistorie(String idRejestracji) throws SQLException {
+        String historia = "DELETE FROM Historia WHERE IdRejestracja = " + idRejestracji;
+        stmtHistoria.executeUpdate(historia);
+    }
+
+
 }
