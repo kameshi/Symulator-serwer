@@ -4,9 +4,8 @@ import java.io.*;
 import java.net.Socket;
 import java.sql.SQLException;
 
-import bazaDanych.BazaDanych;
-import bazaDanych.DaneAuta;
 import bazaDanych.ObslugaBazyDanych;
+import dane.*;
 
 public class Komunikacja implements Runnable{
     ObjectInputStream czytelnik;

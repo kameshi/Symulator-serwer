@@ -1,6 +1,6 @@
 package obliczanie;
 
-import bazaDanych.DaneAuta;
+import dane.*;
 
 public class Obliczania {
     DaneAuta auto;

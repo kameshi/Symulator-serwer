@@ -1,6 +1,7 @@
 package bazaDanych;
 
 import com.sun.org.apache.bcel.internal.generic.Select;
+import dane.*;
 
 import java.sql.*;
 

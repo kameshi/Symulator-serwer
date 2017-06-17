@@ -2,13 +2,10 @@ package main;
 
 
 
-import bazaDanych.Historia;
-import bazaDanych.ObslugaBazyDanych;
 import komunikacja.Komunikacja;
 
 import java.io.FileNotFoundException;
 import java.net.*;
-import java.sql.*;
 
 public class Main {
 
